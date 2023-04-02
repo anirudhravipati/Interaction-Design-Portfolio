@@ -3,6 +3,8 @@ A website to showcase my work as an interaction designer! This is the third vers
 
 This is also serves as a way to commit to my multi-disciplinary side on a deeper level. This website shall grow to include not just product design work but also my work at CIID, and other future art and design works.
 
+[[toc]]
+
 ## Process 
 
 ### Step 1 : Verplank Model 
