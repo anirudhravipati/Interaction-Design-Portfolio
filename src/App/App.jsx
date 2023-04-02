@@ -14,6 +14,7 @@ function App() {
       <pre> this is what pre looks like</pre>
       <footer>
         Hello There! this is the footer
+        <p> and this is a paragraph within a paragraph tag</p>
       </footer>
     </div>
   )

@@ -61,6 +61,6 @@ p, pre {
   font-weight: regular;
 }
 
-footer {
+footer, footer p{
   font-size:0.75rem;
 }
