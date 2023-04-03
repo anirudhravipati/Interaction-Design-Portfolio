@@ -56,9 +56,16 @@ h6 {
 }
 
 p, pre {
-  font-family: -apple-system-ui-serif, ui-serif, 'Georgia', serif;
+  font-family: 'EB Garamond',-apple-system-ui-serif, ui-serif, 'Georgia', serif;
   font-size: 1rem;
-  font-weight: regular;
+  font-weight: 400;
+}
+
+button {
+  font-family: 'EB Garamond',-apple-system-ui-serif, ui-serif, 'Georgia', serif;
+  /* font-family: 'Space Grotesk', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 footer, footer p{
