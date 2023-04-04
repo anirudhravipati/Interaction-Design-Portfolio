@@ -4,10 +4,9 @@ import './Title.css'
 function Title() {
 
   return (
-    <>
-    <div className="Title">
+    <div id="Title">
       <h1> Aniruddh Ravipati</h1>
-      <div className="title-hidden-content">
+      <div id="title-hidden-content">
         <p id="personal-blurb">
           I am a product designer with a background in software development.
           Currently, I am currently designing products for CloudAEye, a SaaS startup that specialises in AIOps for Serverless Functions.
@@ -18,7 +17,6 @@ function Title() {
         </button>
       </div>
     </div>
-    </>
   )
 }
 

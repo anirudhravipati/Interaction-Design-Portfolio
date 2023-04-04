@@ -1,33 +1,43 @@
-.Title {
-    display: flex;
-    flex-direction: column;
-    outline: auto;
-    padding: 16px;
-    align-items: center;
+* {
+    padding:0;
+    margin: 0;
 }
 
-.title-hidden-content {
-    display: none;
-}
-
-.Title:hover .title-hidden-content {
+#Title {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    width: fit-content;
+    
+    padding: 1rem;
+    
     outline: auto;
-    gap:1rem;
     margin: 1rem;
+}
 
+#title-hidden-content {
+    display: none;
+
+    width: fit-content;
+}
+
+#Title:hover #title-hidden-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:1rem;
+
+    width:fit-content;
+    
 }
 
 #personal-blurb {
-    width: 50%;
+    width: 50vw;
     text-align: center;
-    outline: auto;
 }
 
 #resume {
-    padding: 16px 32px;
     outline: auto;
-    background-color: transparent;
+    padding: 16px 32px;
 }
