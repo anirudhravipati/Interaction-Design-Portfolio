@@ -12,7 +12,6 @@
     
     padding: 1rem;
     
-    outline: auto;
     margin: 1rem;
 }
 
@@ -20,6 +19,10 @@
     display: none;
 
     width: fit-content;
+}
+
+#Title:hover {
+    border: 1px solid black;
 }
 
 #Title:hover #title-hidden-content {
@@ -38,6 +41,10 @@
 }
 
 #resume {
-    outline: auto;
+    border: 1px solid black;
     padding: 16px 32px;
+}
+
+#project-card-title {
+    margin-bottom: 1rem;
 }

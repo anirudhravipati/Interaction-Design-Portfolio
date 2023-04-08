@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './Title.css'
 
 function Title() {

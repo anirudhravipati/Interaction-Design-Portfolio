@@ -1,10 +1,33 @@
-import React from 'react'
+import React, { Children } from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App/App'
+import Error from './App/components/Error/Error'
+import FAM from './App/components/projects/FAM/FAM'
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
 import './index.css'
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    errorElement: <Error />,
+    children: [
+      {
+        path: "FAM",
+        element: <FAM />,
+      },
+    ],
+  },
+]);
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>,
 )
