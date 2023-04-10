@@ -1,4 +1,5 @@
 import './Project-list.css'
+import { Link } from 'react-router-dom'
 
 function ProjectList() {
 
@@ -10,7 +11,7 @@ function ProjectList() {
           <h4>CloudAEye</h4>
         </div>
         <div className="project-item">
-          <h4>FAM</h4>
+          <h4><Link to='FAM'>FAM</Link></h4>
         </div>
         <div className="project-item">
           <h4>CloudAEye</h4>

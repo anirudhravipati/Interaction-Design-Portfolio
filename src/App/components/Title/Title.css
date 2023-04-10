@@ -7,32 +7,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
     width: fit-content;
-    
     padding: 1rem;
-    
     margin: 1rem;
 }
 
 #title-hidden-content {
-    display: none;
-
-    width: fit-content;
-}
-
-#Title:hover {
-    border: 1px solid black;
-}
-
-#Title:hover #title-hidden-content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap:1rem;
-
     width:fit-content;
-    
 }
 
 #personal-blurb {

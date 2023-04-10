@@ -1,7 +1,7 @@
 import Title from './components/Title/Title'
 import ProjectList from './components/Project-List/Project-list'
 import './App.css'
-
+import { Outlet } from 'react-router-dom'
 
 
 
@@ -10,6 +10,7 @@ function App() {
     <div className="App">
       <Title />
       <ProjectList />
+
     </div>
   )
 }
