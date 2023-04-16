@@ -3,10 +3,18 @@
     margin: 0;
 }
 
+#Home {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    outline: auto;
+}
+
 #Title {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: fit-content;
     padding: 1rem;
     margin: 1rem;

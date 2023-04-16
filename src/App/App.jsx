@@ -1,16 +1,10 @@
-import Title from './components/Title/Title'
-import ProjectList from './components/Project-List/Project-list'
+import Home from './components/Home/Home'
 import './App.css'
-import { Outlet } from 'react-router-dom'
-
-
 
 function App() {
   return (
     <div className="App">
-      <Title />
-      <ProjectList />
-
+      <Home key="title" />
     </div>
   )
 }
