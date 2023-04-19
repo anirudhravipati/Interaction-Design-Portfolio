@@ -3,44 +3,54 @@ import { Link } from 'react-router-dom'
 import { motion,AnimatePresence, LayoutGroup } from 'framer-motion'
 import { useState } from 'react'
 import ProjectList from '../Project-List/Project-list'
+import CustomCursor from '../CustomCursor/CustomCursor'
+
 
 export function Home() {
 
-  return (    
-    <motion.div id='Home'
-    >
-      <LayoutGroup>
-        <Title key="title"/>
-        <ProjectList key="project-list" />
-      </LayoutGroup>
-    </motion.div>
+  const [hoverOnBlurb,setHoverOnBlurb] = useState(false); 
+
+  return (  
+    <>  
+      <motion.div id='Home'>
+        <LayoutGroup>
+          <Title key="title" setHoverOnBlurb={setHoverOnBlurb}/>
+          <ProjectList key="project-list" />
+        </LayoutGroup>
+      </motion.div>
+      <CustomCursor cursorText={hoverOnBlurb?"more":undefined}/>
+    </>
   )
 }
 
-function Title() {
+function Title({setHoverOnBlurb}) {
   const [showBlurb,setShowBlurb] = useState(false)
   
   function handleHover(val)
   {
-    console.log(val)
+    setHoverOnBlurb(val);
     setShowBlurb(val);
   }
   return(
-  <motion.div
-    layout="position"
-    transition={{type:'spring'}}
-    whileHover={{border:'1px solid red'}}
-    onHoverStart={() => handleHover(true)}
-    onHoverEnd={() => handleHover(false)}
-    id="Title"
-    >
-      <AnimatePresence>
-        <motion.h1 style={{ textAlign: 'center' }} key="title-heading"> Aniruddh Ravipati</motion.h1>
-        {
-          showBlurb? <Blurb key="blurb"/>:(<></>)
-        }
-      </AnimatePresence>
-    </motion.div>
+    <>
+      <motion.div
+      layout="position"
+      transition={{type:'spring'}}
+      style={{borderRadius:'16px'}}
+      whileHover={{border:'1px solid black'}}
+      onHoverStart={() => handleHover(true)}
+      onHoverEnd={() => handleHover(false)}
+      id="Title"
+      >
+        <AnimatePresence>
+          <motion.h1 style={{ textAlign: 'center' }} key="title-heading"> Aniruddh Ravipati</motion.h1>
+          {
+            showBlurb? <Blurb key="blurb"/>:(<></>)
+          }
+        </AnimatePresence>
+      </motion.div>
+    </>
+  
   )
 }
 
@@ -59,11 +69,11 @@ function Blurb() {
       Currently, I am currently designing products for CloudAEye, a SaaS startup that specialises in AIOps for Serverless Functions.
       With my multidisciplinary training in design, research and development, I aim to walk the fine line between aesthetic, utility and need.
       </motion.p>
-      <motion.button id="resume">
-        <Link to='Documents/Resume Product Design.pdf' target="_blank" rel="noopener noreferrer">
-        Résumé
-        </Link>
-      </motion.button>
+      <Link to='Documents/Resume Product Design.pdf' target="_blank" rel="noopener noreferrer">
+        <motion.button id="resume" whileHover={{color:"white",backgroundColor:"black",transition:{type: "tween"}}}>
+          Résumé
+        </motion.button>
+      </Link>
     </motion.div>
     )
 }
