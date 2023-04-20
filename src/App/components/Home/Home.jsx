@@ -9,21 +9,24 @@ import CustomCursor from '../CustomCursor/CustomCursor'
 export function Home() {
 
   const [hoverOnBlurb,setHoverOnBlurb] = useState(false); 
+  const [hoverOnButton, setHoverOnButton] = useState(false);
 
   return (  
     <>  
       <motion.div id='Home'>
         <LayoutGroup>
-          <Title key="title" setHoverOnBlurb={setHoverOnBlurb}/>
+          <Link to='FAM'>
+            <Title key="title" setHoverOnBlurb={setHoverOnBlurb} setHoverOnButton={setHoverOnButton}/>
+          </Link>
           <ProjectList key="project-list" />
         </LayoutGroup>
       </motion.div>
-      <CustomCursor cursorText={hoverOnBlurb?"more":undefined}/>
+      <CustomCursor interaction={hoverOnButton?"button":""} cursorText={hoverOnBlurb?"more":undefined}/>
     </>
   )
 }
 
-function Title({setHoverOnBlurb}) {
+function Title({setHoverOnBlurb,setHoverOnButton}) {
   const [showBlurb,setShowBlurb] = useState(false)
   
   function handleHover(val)
@@ -45,7 +48,7 @@ function Title({setHoverOnBlurb}) {
         <AnimatePresence>
           <motion.h1 style={{ textAlign: 'center' }} key="title-heading"> Aniruddh Ravipati</motion.h1>
           {
-            showBlurb? <Blurb key="blurb"/>:(<></>)
+            showBlurb? <Blurb key="blurb" setHoverOnButton={setHoverOnButton} />:(<></>)
           }
         </AnimatePresence>
       </motion.div>
@@ -54,7 +57,13 @@ function Title({setHoverOnBlurb}) {
   )
 }
 
-function Blurb() {
+function Blurb({setHoverOnButton}) {
+
+  function handleHover(val)
+  {
+    setHoverOnButton(val);
+  }
+
   return (
     <motion.div
     key="blurb"
@@ -70,7 +79,12 @@ function Blurb() {
       With my multidisciplinary training in design, research and development, I aim to walk the fine line between aesthetic, utility and need.
       </motion.p>
       <Link to='Documents/Resume Product Design.pdf' target="_blank" rel="noopener noreferrer">
-        <motion.button id="resume" whileHover={{color:"white",backgroundColor:"black",transition:{type: "tween"}}}>
+        <motion.button
+        id="resume"
+        whileHover={{color:"white",backgroundColor:"black",transition:{type: "tween"}}}
+        onHoverStart={()=>handleHover(true)}
+        onHoverEnd={()=>handleHover(false)}
+        >
           Résumé
         </motion.button>
       </Link>
