@@ -64,6 +64,10 @@ function Blurb({setHoverOnButton}) {
     setHoverOnButton(val);
   }
 
+  const stopPropagation = (event) => {
+    event.stopPropagation();
+  }
+
   return (
     <motion.div
     key="blurb"
@@ -78,7 +82,7 @@ function Blurb({setHoverOnButton}) {
       Currently, I am currently designing products for CloudAEye, a SaaS startup that specialises in AIOps for Serverless Functions.
       With my multidisciplinary training in design, research and development, I aim to walk the fine line between aesthetic, utility and need.
       </motion.p>
-      <Link to='Documents/Resume Product Design.pdf' target="_blank" rel="noopener noreferrer">
+      <Link to='Documents/Resume Product Design.pdf' target="_blank" rel="noopener noreferrer" onClick={stopPropagation}>
         <motion.button
         id="resume"
         whileHover={{color:"white",backgroundColor:"black",transition:{type: "tween"}}}
