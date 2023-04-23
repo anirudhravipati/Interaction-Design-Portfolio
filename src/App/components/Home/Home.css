@@ -3,10 +3,17 @@
     margin: 0;
 }
 
+#Home {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #Title {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: fit-content;
     padding: 1rem;
     margin: 1rem;
@@ -30,6 +37,7 @@
     border: 1px solid black;
     padding: 16px 32px;
 }
+
 
 #project-card-title {
     margin-bottom: 1rem;
