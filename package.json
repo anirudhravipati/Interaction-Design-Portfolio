@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@floating-ui/react": "^0.24.0",
     "@react-spring/web": "^9.7.1",
     "framer-motion": "^10.11.2",
     "localforage": "^1.10.0",
