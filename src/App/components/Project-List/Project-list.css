@@ -25,13 +25,41 @@
 
 .project-item {
     display: flex;
+    width: 100%;
     align-items: center;
     justify-content: center;
+    outline: auto;
 }
 
 .project-list-tooltip{
+    display: block;
+    text-align: center;
     outline: 1px solid black;
     padding: 1rem 1rem;
     border-radius: 0.25rem;
     background-color: white;
+    max-width: 33vw;
+}
+
+.preview-image {
+    width: 100%;
+    margin: 0.25rem;
+}
+
+.tags {
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+    margin: 0.25rem;
+    justify-content: center;
+    
+
+}
+
+.tag {
+    align-self: center;
+    padding: 0.25rem 0.5rem;
+    background-color: grey;
+    color: black;
+    border-radius: 0.25rem;
 }
