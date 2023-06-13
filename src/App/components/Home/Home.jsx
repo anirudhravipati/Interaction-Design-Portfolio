@@ -15,9 +15,7 @@ export function Home() {
     <>  
       <motion.div id='Home'>
         <LayoutGroup>
-          <Link to='FAM'>
             <Title key="title" setHoverOnBlurb={setHoverOnBlurb} setHoverOnButton={setHoverOnButton}/>
-          </Link>
           <ProjectList key="project-list" />
         </LayoutGroup>
       </motion.div>
@@ -31,9 +29,9 @@ function Title({setHoverOnBlurb,setHoverOnButton}) {
   
   function handleHover(val)
   {
-    setHoverOnBlurb(val);
     setShowBlurb(val);
   }
+
   return(
     <>
       <motion.div
@@ -48,7 +46,7 @@ function Title({setHoverOnBlurb,setHoverOnButton}) {
         <AnimatePresence>
           <motion.h1 style={{ textAlign: 'center' }} key="title-heading"> Aniruddh Ravipati</motion.h1>
           {
-            showBlurb? <Blurb key="blurb" setHoverOnButton={setHoverOnButton} />:(<></>)
+            showBlurb? <Blurb key="blurb" setHoverOnBlurb={setHoverOnBlurb} setHoverOnButton={setHoverOnButton} />:(<></>)
           }
         </AnimatePresence>
       </motion.div>
@@ -57,12 +55,22 @@ function Title({setHoverOnBlurb,setHoverOnButton}) {
   )
 }
 
-function Blurb({setHoverOnButton}) {
+function Blurb({setHoverOnBlurb,setHoverOnButton}) {
 
-  function handleHover(val)
+  function handleHover(func,val)
   {
-    setHoverOnButton(val);
+    func(val);
   }
+
+  // function handleHover(val)
+  // {
+  //   setHoverOnButton(val);
+  // }
+
+  // function handleBlurbHober(val)
+  // {
+  //   setHoverOnBlurb(val);
+  // }
 
   const stopPropagation = (event) => {
     event.stopPropagation();
@@ -77,17 +85,23 @@ function Blurb({setHoverOnButton}) {
     exit={{ opacity: 0 }}
     transition={{type:'ease-in'}}
     >
-      <motion.p id="personal-blurb">
-      I am a product designer with a background in software development.
-      Currently, I am currently designing products for CloudAEye, a SaaS startup that specialises in AIOps for Serverless Functions.
-      With my multidisciplinary training in design, research and development, I aim to walk the fine line between aesthetic, utility and need.
-      </motion.p>
+      <Link to='FAM'>
+        <motion.p 
+          id="personal-blurb"
+          onHoverStart={()=>handleHover(setHoverOnBlurb,true)}
+          onHoverEnd={()=>handleHover(setHoverOnBlurb,false)}
+        >
+        I am a product designer with a background in software development.
+        Currently, I am currently designing products for CloudAEye, a SaaS startup that specialises in AIOps for Serverless Functions.
+        With my multidisciplinary training in design, research and development, I aim to walk the fine line between aesthetic, utility and need.
+        </motion.p>
+      </Link>
       <Link to='Documents/Resume Product Design.pdf' target="_blank" rel="noopener noreferrer" onClick={stopPropagation}>
         <motion.button
         id="resume"
         whileHover={{color:"white",backgroundColor:"black",transition:{type: "tween"}}}
-        onHoverStart={()=>handleHover(true)}
-        onHoverEnd={()=>handleHover(false)}
+        onHoverStart={()=>handleHover(setHoverOnButton,true)}
+        onHoverEnd={()=>handleHover(setHoverOnButton,false)}
         >
           Résumé
         </motion.button>

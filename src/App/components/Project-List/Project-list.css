@@ -28,7 +28,6 @@
     width: 100%;
     align-items: center;
     justify-content: center;
-    outline: auto;
 }
 
 .project-list-tooltip{
@@ -39,11 +38,14 @@
     border-radius: 0.25rem;
     background-color: white;
     max-width: 33vw;
+    margin: 1rem
 }
 
 .preview-image {
-    width: 100%;
+    width: auto;
+    height: 25vh;
     margin: 0.25rem;
+    object-fit: cover;
 }
 
 .tags {
@@ -59,7 +61,7 @@
 .tag {
     align-self: center;
     padding: 0.25rem 0.5rem;
-    background-color: grey;
-    color: black;
+    background-color: black;
+    color: white;
     border-radius: 0.25rem;
 }

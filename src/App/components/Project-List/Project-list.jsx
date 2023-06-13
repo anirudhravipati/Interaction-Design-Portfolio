@@ -1,8 +1,11 @@
 import "./Project-list.css";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { offset, flip, useFloating, autoUpdate } from "@floating-ui/react";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { ProjectListData } from "../../Utilities/Data";
+import ImageLoader from "../../Utilities/ImageLoader";
+import CustomCursor from "../CustomCursor/CustomCursor";
+
 
 function ProjectList() {
 
@@ -11,7 +14,7 @@ function ProjectList() {
       <h2> Projects</h2>
       <motion.div id="projects-list">
         {
-          ProjectListData.map((project) => <ProjectItem item={project} />)
+          ProjectListData.map((project) => <ProjectItem key={project.key} item={project} />)
         }
       </motion.div>
     </motion.div>
@@ -23,9 +26,9 @@ function ProjectItem({ item }) {
   const [hoverState, setHover] = useState(false);
 
   return (
-    <motion.div key={item.key} ref={setAnchor} onHoverStart={() => setHover(true)} onHoverEnd={() => setHover(false)} className="project-item">
+    <motion.div ref={setAnchor} onHoverStart={() => setHover(true)} onHoverEnd={() => setHover(false)} className="project-item">
       <h4>{item.title}</h4>
-      <Tooltip item={item} hover={hoverState} anchor={anchor} />
+      <Tooltip key={item.tooltip_key} item={item} hover={hoverState} anchor={anchor} />
     </motion.div>
   )
 }
@@ -52,20 +55,28 @@ function Tooltip({ item, hover = false, anchor }) {
 
   console.log(`isOpen :` + isOpen)
   return (
-    <>
+    <AnimatePresence>
       {isOpen && (
-        <div key={item.tooltip_key} ref={refs.setFloating} style={floatingStyles}>
+        <motion.div
+          
+          ref={refs.setFloating} 
+          style={floatingStyles}
+          initial={{opacity:0}}
+          animate={{opacity:1}}
+          exit={{opacity: 0}}
+          transition={{duration: 0.4}}
+        >
           <div className="project-list-tooltip">
             <h6>{item.title}</h6>
-            <img rel="preload" src={item.src} className="preview-image" />
+            <ImageLoader src={item.src} className={"preview-image"}/>
             <p>{item.content}</p>
             <div className="tags">
-              {item.tags.map(tag => <div className="tag">tag</div>)}
+              {item.tags.map(tag => <footer key={item.title+tag} className="tag">{tag}</footer>)}
             </div>
           </div>
-        </div>
+        </motion.div>
       )}
-    </>
+    </AnimatePresence>
   )
 }
 
