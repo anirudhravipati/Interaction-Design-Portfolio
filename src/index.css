@@ -2,7 +2,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
+
 
 :root {
   /* color-scheme: light dark; */
@@ -10,13 +12,21 @@
   margin: 0;
   padding: 0;
   
+  scroll-behavior: smooth;
+  overflow-y: scroll;
 
   font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizeSpeed;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+:root::-webkit-scrollbar-track {
+  background: aqua;
+}
+
 
 
 h1 {

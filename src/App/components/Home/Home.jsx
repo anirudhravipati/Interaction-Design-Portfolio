@@ -16,7 +16,7 @@ export function Home() {
       <motion.div id='Home'>
         <LayoutGroup>
             <Title key="title" setHoverOnBlurb={setHoverOnBlurb} setHoverOnButton={setHoverOnButton}/>
-          <ProjectList key="project-list" />
+          <ProjectList key="project-list" setHoverOnBlurb={setHoverOnBlurb} setHoverOnButton={setHoverOnButton} />
         </LayoutGroup>
       </motion.div>
       <CustomCursor interaction={hoverOnButton?"button":""} cursorText={hoverOnBlurb?"more":undefined}/>
@@ -62,16 +62,6 @@ function Blurb({setHoverOnBlurb,setHoverOnButton}) {
     func(val);
   }
 
-  // function handleHover(val)
-  // {
-  //   setHoverOnButton(val);
-  // }
-
-  // function handleBlurbHober(val)
-  // {
-  //   setHoverOnBlurb(val);
-  // }
-
   const stopPropagation = (event) => {
     event.stopPropagation();
   }
@@ -86,15 +76,15 @@ function Blurb({setHoverOnBlurb,setHoverOnButton}) {
     transition={{type:'ease-in'}}
     >
       <Link to='FAM'>
-        <motion.p 
+        <p 
           id="personal-blurb"
-          onHoverStart={()=>handleHover(setHoverOnBlurb,true)}
-          onHoverEnd={()=>handleHover(setHoverOnBlurb,false)}
+          onMouseEnter={()=>handleHover(setHoverOnBlurb,true)}
+          onMouseLeave={()=>handleHover(setHoverOnBlurb,false)}
         >
         I am a product designer with a background in software development.
         Currently, I am currently designing products for CloudAEye, a SaaS startup that specialises in AIOps for Serverless Functions.
         With my multidisciplinary training in design, research and development, I aim to walk the fine line between aesthetic, utility and need.
-        </motion.p>
+        </p>
       </Link>
       <Link to='Documents/Resume Product Design.pdf' target="_blank" rel="noopener noreferrer" onClick={stopPropagation}>
         <motion.button
