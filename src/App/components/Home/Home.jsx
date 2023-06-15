@@ -4,6 +4,7 @@ import { motion,AnimatePresence, LayoutGroup } from 'framer-motion'
 import { useState } from 'react'
 import ProjectList from '../Project-List/Project-list'
 import CustomCursor from '../CustomCursor/CustomCursor'
+import Footer from '../Footer/Footer'
 
 
 export function Home() {
@@ -15,9 +16,10 @@ export function Home() {
     <>  
       <motion.div id='Home'>
         <LayoutGroup>
-            <Title key="title" setHoverOnBlurb={setHoverOnBlurb} setHoverOnButton={setHoverOnButton}/>
+          <Title key="title" setHoverOnBlurb={setHoverOnBlurb} setHoverOnButton={setHoverOnButton}/>
           <ProjectList key="project-list" setHoverOnBlurb={setHoverOnBlurb} setHoverOnButton={setHoverOnButton} />
         </LayoutGroup>
+        <Footer/>
       </motion.div>
       <CustomCursor interaction={hoverOnButton?"button":""} cursorText={hoverOnBlurb?"more":undefined}/>
     </>
