@@ -1,4 +1,6 @@
-*,*::before,*::after {
+*,
+*::before,
+*::after {
     cursor: none;
 }
 
@@ -6,24 +8,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    font-family: 'Goudy Bookletter 1911',-apple-system-ui-serif, ui-serif, 'Georgia', serif;
-    font-size:12pt;
+
+    font-family: 'Goudy Bookletter 1911', -apple-system-ui-serif, ui-serif, 'Georgia', serif;
+    font-size: 12pt;
 
     background-color: #111;
-    color:white;
-    
+    color: white;
+
     min-height: 24px;
     min-width: 24px;
-    padding:8px;
+    padding: 8px;
     aspect-ratio: 1/1;
     border-radius: 50%;
-    
+
     position: fixed;
-    
+
     top: 0;
     left: 0;
-    
+
     pointer-events: none;
 }
-  

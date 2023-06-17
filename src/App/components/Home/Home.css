@@ -3,6 +3,16 @@
     margin: 0;
 }
 
+#home-page {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+    border: 8px solid blueviolet;
+}
+
 #Home {
     display:flex;
     flex-direction: column;

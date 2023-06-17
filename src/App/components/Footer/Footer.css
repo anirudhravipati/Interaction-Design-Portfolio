@@ -1,10 +1,13 @@
-#footer {
-    position: absolute;
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.footer {
     bottom: 0;
     left: 0;
 
     background-color: white;
-    height: 10vh;
     margin-top: 20vh;
     border-top: 1px solid black;
     width: 100%;
@@ -13,10 +16,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding: 1rem ;
+    outline: 4px solid steelblue;
 }
 
-#footer-links {
+.footer-links {
     display: flex;
     margin: 0.25rem 0.25rem;
 }

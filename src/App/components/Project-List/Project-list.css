@@ -1,5 +1,5 @@
 * {
-    padding:0;
+    padding: 0;
     margin: 0;
 }
 
@@ -30,7 +30,7 @@
     justify-content: center;
 }
 
-.project-list-tooltip{
+.project-list-tooltip {
     display: block;
     text-align: center;
     outline: 1px solid black;
@@ -54,7 +54,7 @@
     gap: 0.25rem;
     margin: 0.25rem;
     justify-content: center;
-    
+
 
 }
 

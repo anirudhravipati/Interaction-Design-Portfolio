@@ -1,15 +1,13 @@
-import React, { Children } from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App/App'
-import Error from './App/components/Error/Error'
-import FAM from './App/components/projects/FAM/FAM'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import React, { Children } from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App/App";
+import Error from "./App/components/Error/Error";
+import FAM from "./App/components/projects/FAM/FAM";
+import About from "./App/components/About/About";
 
-import './index.css'
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+import "./index.css";
 
 const router = createBrowserRouter([
   {
@@ -18,14 +16,17 @@ const router = createBrowserRouter([
     errorElement: <Error />,
   },
   {
-    path:"FAM",
-    element: <FAM/>
+    path: "FAM",
+    element: <FAM />,
+  },
+  {
+    path: "about",
+    element: <About />,
   },
 ]);
 
-
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);
