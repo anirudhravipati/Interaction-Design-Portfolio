@@ -5,6 +5,7 @@ import { useState } from "react";
 import ProjectList from "../Project-List/Project-list";
 import CustomCursor from "../CustomCursor/CustomCursor";
 import Footer from "../Footer/Footer";
+import Sidemenu from "../Sidemenu/Sidemenu";
 
 export function Home() {
   const [hoverOnBlurb, setHoverOnBlurb] = useState(false);
@@ -29,6 +30,7 @@ export function Home() {
         </motion.div>
         <Footer />
       </LayoutGroup>
+      <Sidemenu showAbout={true}/>
       <CustomCursor
         interaction={hoverOnButton ? "button" : ""}
         cursorText={hoverOnBlurb ? "more" : undefined}

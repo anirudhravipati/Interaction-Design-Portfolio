@@ -1,16 +1,27 @@
-import './FAM.css'
-import CustomCursor from '../../CustomCursor/CustomCursor'
+import "./FAM.css";
+import CustomCursor from "../../CustomCursor/CustomCursor";
+import Sidemenu from "../../Sidemenu/Sidemenu";
+import Footer from "../../Footer/Footer";
+import { motion } from "framer-motion";
+import Info from "../ProjectComponents/Info/Info"
 
-function FAM() {
+export default function FAM() {
   return (
     <>
-      <div id="FAM">
-          <h1> FAM </h1>
-      </div>
+      <Sidemenu showAbout={true} />
+      <Info/>
+      <Project />
+      <Footer />
       <CustomCursor />
     </>
-    
-  )
+  );
 }
 
-export default FAM
+function Project() {
+  return(
+    <motion.div style={{outline: "4px solid red"}}>
+      <motion.h1 style={{textAlign: "center"}}>FAM</motion.h1>
+
+    </motion.div>
+  ) 
+}

@@ -33,6 +33,7 @@ h1 {
   font-family: 'Space Grotesk', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 6rem;
   font-weight: 700;
+  text-align: center;
 }
 
 h2 {
@@ -73,7 +74,7 @@ pre {
 }
 
 button {
-  font-family: 'Goudy Bookletter 1911', -apple-system-ui-serif, ui-serif, 'Georgia', serif;
+  font-family: 'Space Grotesk', -apple-system-ui-serif, ui-serif, 'Georgia', serif;
   /* font-family: 'Space Grotesk', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
   font-size: 1rem;
   padding: 0.5rem 1rem;
