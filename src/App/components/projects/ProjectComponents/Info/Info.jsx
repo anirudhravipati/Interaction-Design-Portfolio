@@ -45,7 +45,7 @@ export default function Info() {
           >
             <InfoEntry purpose="designed in" application={["Figma"]} />
             <InfoEntry
-              purpose="implemented in"
+              purpose="frontend stack"
               application={["React", "MUI"]}
             />
             <InfoEntry
@@ -77,7 +77,7 @@ function InfoEntry({ purpose = "", application }) {
       </motion.p>
       {application.map((app) => {
         return (
-          <motion.div key={{ app }} className="application-row">
+          <motion.div key={app} className="application-row">
             {Icons.find((item) => item.application == app) &&
               Icons.find((item) => item.application == app).DOM}
             <p>{app}</p>
