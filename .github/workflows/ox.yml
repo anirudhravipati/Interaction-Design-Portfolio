@@ -1,0 +1,17 @@
+name: Example workflow with OX Security Scan
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, reopened, synchronize]
+    branches:
+      - main
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run OX Security Scan to check for vulnerabilities
+        with:
+          ox_api_key: ox_B1lNQz@A8I-xbIEyzsYERXbI6DzlToK9D5-U
+        uses: oxsecurity/ox-security-scan@main
