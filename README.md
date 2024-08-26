@@ -1,4 +1,5 @@
 # Aniruddh Ravipati's Portfolio
+[![CodeQL](https://github.com/anirudhravipati/Interaction-Design-Portfolio/actions/workflows/codeql.yml/badge.svg)](https://github.com/anirudhravipati/Interaction-Design-Portfolio/actions/workflows/codeql.yml)
 
 WORK IN PROGRESS! 
 
