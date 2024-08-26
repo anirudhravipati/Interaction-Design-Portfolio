@@ -1,0 +1,51 @@
+{
+    "parameters": [
+      {
+          "status": 1,
+          "name": "objectPropertiesSparsing"
+      },
+      {
+          "status": 1,
+          "name": "whitespaceRemoval"
+      },
+      {
+          "status": 1,
+          "name": "regexObfuscation"
+      },
+      {
+          "status": 1,
+          "options": {
+              "features": [
+                  "opaqueSteps"
+              ]
+          },
+          "name": "controlFlowFlattening"
+      },
+      {
+          "status": 1,
+          "name": "booleanToAnything"
+      },
+      {
+        "status": 1,
+        "name": "identifiersRenaming"
+      }
+    ],
+    "areSubscribersOrdered": false,
+    "languageSpecifications": {
+      "es8": true,
+      "es7": false,
+      "es6": true,
+      "es5": true
+    },
+    "applicationTypes": {
+        "html5GameApp": false,
+        "javascriptNativeApp": false,
+        "hybridMobileApp": true,
+        "serverApp": false,
+        "desktopApp": false,
+        "webBrowserApp": true
+    },
+    "useRecommendedOrder": true,
+    "tolerateMinification": true,
+    "useProfilingData": false
+  }
