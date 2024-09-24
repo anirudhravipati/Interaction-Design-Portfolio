@@ -10,8 +10,8 @@ function CustomCursor({ interaction = "", cursorText = undefined }) {
 
   const variants = {
     default: {
-      x: mousePosition.x - 8,
-      y: mousePosition.y - 8,
+      x: mousePosition.x - 8.25,
+      y: mousePosition.y - 8.25,
     },
     button: {
       x: mousePosition.x - 8,
@@ -39,7 +39,7 @@ function CustomCursor({ interaction = "", cursorText = undefined }) {
     <motion.div
       id="cursor"
       animate={interaction == "" ? "default" : interaction}
-      transition={{ duration: 0.1 }}
+      transition={{ duration: 0.125 }}
       variants={variants}
     >
       {cursorText == undefined ? <></> : cursorText}
